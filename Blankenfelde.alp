@@ -113,13 +113,13 @@
 				<Line>1463298367392</Line>
 				<Line>1463301271418</Line>
 				<Duration Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[10]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
 					<Code><![CDATA[3]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
-					<Code><![CDATA[50]]></Code>
+					<Code><![CDATA[15]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
 					<Code><![CDATA[3]]></Code>
@@ -1473,39 +1473,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1463678036752</Id>
-					<Name><![CDATA[connector40]]></Name>
-					<X>420</X><Y>650</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[blankenfelde]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[go_AcrossStreet]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedGoTo]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[blankenfelde]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[wait_Lights]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
-						<ClassName><![CDATA[PedWait]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-110</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1463678173040</Id>
 					<Name><![CDATA[connector42]]></Name>
 					<X>460</X><Y>650</Y>
@@ -1702,6 +1669,39 @@
 					<Points>
 						<Point><X>440</X><Y>740</Y></Point>
 						<Point><X>540</X><Y>740</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1463678036752</Id>
+					<Name><![CDATA[connector40]]></Name>
+					<X>420</X><Y>650</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[blankenfelde]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[go_AcrossStreet]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
+						<ClassName><![CDATA[PedGoTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[blankenfelde]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[wait_Lights]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.pedestrian]]></PackageName>
+						<ClassName><![CDATA[PedWait]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-110</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -7335,66 +7335,6 @@
 
 				</Road>
 
-				<Road TargetId="1463223390570">
-					<Id>1463223526587</Id>
-					<Name><![CDATA[r_HauptstrasseEast]]></Name>
-					<X>1295.2</X><Y>65.2</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<DelimiterWidth Class="UnitValue">
-						<Value Class="Double">
-							0
-						</Value>
-						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
-					</DelimiterWidth>
-					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
-					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
-					<ForwardLanesCount>1</ForwardLanesCount>
-					<Bidirectional>true</Bidirectional>
-					<BackwardLanesCount>1</BackwardLanesCount>
-					<Points>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>24.065</X><Y>-6.773</Y><Z>0</Z></Point>
-						<Point><X>-24.065</X><Y>6.773</Y><Z>0</Z></Point>
-						<Point><X>-668</X><Y>188</Y><Z>0</Z></Point>
-						<Point><X>-643.935</X><Y>181.227</Y><Z>0</Z></Point>
-						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
-					</Points>
-
-			<Shapes>
-				<RoadStopline>
-					<Id>1463223530358</Id>
-					<Name><![CDATA[stopLine1]]></Name>
-					<X>0</X><Y>0</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>682.5910069161944</Offset>
-					<OnForwardSide>true</OnForwardSide>
-					<LeftLane>1</LeftLane>
-					<RightLane>0</RightLane>
-					<Junction>1463223390570</Junction>
-					<StartSpeedLimitSign>false</StartSpeedLimitSign>
-					<SpeedLimitValue Class="UnitValue">
-						<Value Class="Double">
-							40
-						</Value>
-						<Unit Class="SpeedUnits"><![CDATA[KPH]]></Unit>
-					</SpeedLimitValue>
-					<YieldSign>true</YieldSign>
-					<EndOfSpeedLimitSign>false</EndOfSpeedLimitSign>
-				</RoadStopline>
-
-			</Shapes>
-
-				</Road>
-
 				<Road SourceId="1464197947818" TargetId="1463223390570">
 					<Id>1463298361205</Id>
 					<Name><![CDATA[road]]></Name>
@@ -8137,6 +8077,66 @@
 
 				</Road>
 
+				<Road TargetId="1463223390570">
+					<Id>1463223526587</Id>
+					<Name><![CDATA[r_HauptstrasseEast]]></Name>
+					<X>1295.2</X><Y>65.2</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<DelimiterWidth Class="UnitValue">
+						<Value Class="Double">
+							0
+						</Value>
+						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
+					</DelimiterWidth>
+					<RoadDelimiterColor>-16744448</RoadDelimiterColor>
+					<RoadDelimiterMaterial>null</RoadDelimiterMaterial>
+					<ForwardLanesCount>1</ForwardLanesCount>
+					<Bidirectional>true</Bidirectional>
+					<BackwardLanesCount>1</BackwardLanesCount>
+					<Points>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>24.065</X><Y>-6.773</Y><Z>0</Z></Point>
+						<Point><X>-24.065</X><Y>6.773</Y><Z>0</Z></Point>
+						<Point><X>-668</X><Y>188</Y><Z>0</Z></Point>
+						<Point><X>-643.935</X><Y>181.227</Y><Z>0</Z></Point>
+						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
+					</Points>
+
+			<Shapes>
+				<RoadStopline>
+					<Id>1463223530358</Id>
+					<Name><![CDATA[stopLine1]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Offset>682.5910069161944</Offset>
+					<OnForwardSide>true</OnForwardSide>
+					<LeftLane>1</LeftLane>
+					<RightLane>0</RightLane>
+					<Junction>1463223390570</Junction>
+					<StartSpeedLimitSign>false</StartSpeedLimitSign>
+					<SpeedLimitValue Class="UnitValue">
+						<Value Class="Double">
+							40
+						</Value>
+						<Unit Class="SpeedUnits"><![CDATA[KPH]]></Unit>
+					</SpeedLimitValue>
+					<YieldSign>true</YieldSign>
+					<EndOfSpeedLimitSign>false</EndOfSpeedLimitSign>
+				</RoadStopline>
+
+			</Shapes>
+
+				</Road>
+
 			</Shapes>
 
 				</RoadNetwork>
@@ -8696,7 +8696,6 @@ setPreferredSpeed(0);]]></EntryAction>
 	double pedX = thisPed.getX() - getX();
 	double pedY = thisPed.getY() - getY();
 	if (fieldOfView.contains(pedX, pedY)) {
-		traceln("EVENT FOW: car "+getIndex()+" at x="+getX()+", y="+getY()+", to ped "+thisPed.getIndex()+" at x="+thisPed.getX()+", y="+thisPed.getY()+", pedX="+pedX+", pedY="+pedY);
 		pedInDanger = true;
 		break;
 	}
@@ -8813,38 +8812,6 @@ setPreferredSpeed(0);]]></EntryAction>
 					</Properties>	
 				</StatechartElement>
 			</StatechartElements>
-			<Events>
-				<Event>
-					<Id>1464522058970</Id>
-					<Name><![CDATA[event]]></Name>
-					<X>140</X><Y>240</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</Timeout>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
-						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1464595200000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[0.11]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
-						</RecurrenceCode>
-						<Condition><![CDATA[false]]></Condition>
-					</Properties>
-				</Event>
-			</Events>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1464198033392</Id>
@@ -8928,7 +8895,7 @@ setPreferredSpeed(0);]]></EntryAction>
 				<PolygonNode>
 					<Id>1464522544655</Id>
 					<Name><![CDATA[fieldOfView]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>10</X><Y>-10</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8945,8 +8912,9 @@ setPreferredSpeed(0);]]></EntryAction>
 
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-20</Y></Point>
-						<Point><X>30</X><Y>20</Y></Point>
+						<Point><X>70</X><Y>-20</Y></Point>
+						<Point><X>70</X><Y>40</Y></Point>
+						<Point><X>0</X><Y>20</Y></Point>
 					</Points>
 				</PolygonNode>
 				<Text>
