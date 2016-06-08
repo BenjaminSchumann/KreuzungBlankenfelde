@@ -19,6 +19,7 @@
 			<ClientAreaTopLeft><X>0</X><Y>0</Y></ClientAreaTopLeft>
 			<PresentationTopGroupPersistent>true</PresentationTopGroupPersistent>
 			<IconTopGroupPersistent>true</IconTopGroupPersistent>
+			<StartupCode><![CDATA[sl_new.setSignal(SIGNAL_GREEN);]]></StartupCode>
 			<Generic>false</Generic>
 			<GenericParameter>
 				<Id>1463223138721</Id>
@@ -113,13 +114,13 @@
 				<Line>1463298367392</Line>
 				<Line>1463301271418</Line>
 				<Duration Class="CodeValue">
-					<Code><![CDATA[10]]></Code>
+					<Code><![CDATA[40]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
 					<Code><![CDATA[3]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
-					<Code><![CDATA[15]]></Code>
+					<Code><![CDATA[60]]></Code>
 				</Duration>
 				<Duration Class="CodeValue">
 					<Code><![CDATA[3]]></Code>
@@ -1811,6 +1812,61 @@
 					</Points>
 				</Connector>
 			</Connectors>
+			<Events>
+				<Event>
+					<Id>1465411210669</Id>
+					<Name><![CDATA[event]]></Name>
+					<X>500</X><Y>560</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_SECOND]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1465459200000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[0.3]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[SECOND]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[long pedsOnRoadWest = pfs_West.countPeds() - pfs_Middle1.countPeds();
+long pedsOnRoadEast = pfs_Middle1.countPeds() - pfs_East.countPeds();
+
+if (pedsOnRoadWest > 0) {
+	if (sl_new.getSignal().equals(SIGNAL_GREEN)){
+		sl_new.setSignal(SIGNAL_RED);
+	}
+}
+else {
+	if (sl_new.getSignal().equals(SIGNAL_RED)) {
+		sl_new.setSignal(SIGNAL_GREEN);
+	}
+}
+if (pedsOnRoadEast > 0) {
+	if (stopLine7.getSignal().equals(SIGNAL_GREEN)){
+		stopLine7.setSignal(SIGNAL_RED);
+	}
+}
+else {
+	if (stopLine7.getSignal().equals(SIGNAL_RED)) {
+		stopLine7.setSignal(SIGNAL_GREEN);
+	}
+}]]></Action>
+				</Event>
+			</Events>
 			<TableFunctions>
 				<TableFunction AccessType="public" StaticFunction="true">
 					<Id>1464806163140</Id>
@@ -6432,6 +6488,9 @@
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[mode]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[self.MODE_FOLLOW_ROUTE]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[locationType]]></Name>
@@ -7729,13 +7788,13 @@
 				<RoadStopline>
 					<Id>1463301271418</Id>
 					<Name><![CDATA[stopLine7]]></Name>
-					<X>0</X><Y>0</Y>
+					<X>648.861</X><Y>322.838</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>249.41769180855943</Offset>
+					<Offset>220.0</Offset>
 					<OnForwardSide>true</OnForwardSide>
 					<LeftLane>3</LeftLane>
 					<RightLane>0</RightLane>
@@ -7754,13 +7813,13 @@
 				<BusStop>
 					<Id>1463301322815</Id>
 					<Name><![CDATA[busStop]]></Name>
-					<X>654</X><Y>438</Y>
+					<X>716.366</X><Y>489.627</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>110.0</Offset>
+					<Offset>40.0</Offset>
 					<OnForwardSide>true</OnForwardSide>
 					<Length Class="UnitValue">
 						<Value Class="Double">
@@ -7773,13 +7832,13 @@
 				<BusStop>
 					<Id>1463301360153</Id>
 					<Name><![CDATA[busStop1]]></Name>
-					<X>554</X><Y>396</Y>
+					<X>558.492</X><Y>423.798</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Offset>190.0</Offset>
+					<Offset>160.0</Offset>
 					<OnForwardSide>false</OnForwardSide>
 					<Length Class="UnitValue">
 						<Value Class="Double">
@@ -7788,6 +7847,30 @@
 						<Unit Class="LengthUnits"><![CDATA[METER]]></Unit>
 					</Length>
 				</BusStop>
+
+				<RoadStopline>
+					<Id>1465411139148</Id>
+					<Name><![CDATA[sl_new]]></Name>
+					<X>521.771</X><Y>331.677</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Offset>260.0</Offset>
+					<OnForwardSide>false</OnForwardSide>
+					<LeftLane>2</LeftLane>
+					<RightLane>0</RightLane>
+					<StartSpeedLimitSign>false</StartSpeedLimitSign>
+					<SpeedLimitValue Class="UnitValue">
+						<Value Class="Double">
+							40
+						</Value>
+						<Unit Class="SpeedUnits"><![CDATA[KPH]]></Unit>
+					</SpeedLimitValue>
+					<YieldSign>true</YieldSign>
+					<EndOfSpeedLimitSign>false</EndOfSpeedLimitSign>
+				</RoadStopline>
 
 			</Shapes>
 
@@ -8494,17 +8577,17 @@
 						<Point><X>-13.416</X><Y>4.472</Y></Point>
 						<Point><X>13.416</X><Y>-4.472</Y></Point>
 						<Point><X>-10</X><Y>-30</Y></Point>
-						<Point><X>-22.649110967334305</X><Y>-36.32455466701514</Y></Point>
-						<Point><X>2.649</X><Y>-23.675</Y></Point>
-						<Point><X>230</X><Y>-110</Y></Point>
-						<Point><X>223.675</X><Y>-128.974</Y></Point>
-						<Point><X>236.325</X><Y>-91.026</Y></Point>
+						<Point><X>-22.526</X><Y>-36.563</Y></Point>
+						<Point><X>2.526</X><Y>-23.437</Y></Point>
+						<Point><X>230</X><Y>-100</Y></Point>
+						<Point><X>226.04</X><Y>-113.577</Y></Point>
+						<Point><X>233.96</X><Y>-86.423</Y></Point>
 					</Points>
 				</Pathway>
 				<TargetLine>
 					<Id>1463677887121</Id>
 					<Name><![CDATA[tl_TrafficLightWest]]></Name>
-					<X>490</X><Y>320</Y>
+					<X>500</X><Y>340</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8514,23 +8597,7 @@
 					<LineColor>-16744448</LineColor>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>50</Y></Point>
-					</Points>
-				</TargetLine>
-				<TargetLine>
-					<Id>1463678943304</Id>
-					<Name><![CDATA[tl_TrafficLightEast]]></Name>
-					<X>640</X><Y>270</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<LineColor>-16744448</LineColor>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>20</X><Y>40</Y></Point>
+						<Point><X>10</X><Y>35</Y></Point>
 					</Points>
 				</TargetLine>
 				<TargetLine>
@@ -8567,6 +8634,71 @@
 						<Point><X>40</X><Y>120</Y></Point>
 						<Point><X>54.23</X><Y>115.257</Y></Point>
 						<Point><X>25.77</X><Y>124.743</Y></Point>
+					</Points>
+				</Pathway>
+				<FlowStatistics>
+					<Id>1465410910421</Id>
+					<Name><![CDATA[pfs_West]]></Name>
+					<X>510</X><Y>330</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-16777088</LineColor>
+					<Dx>20</Dx>
+					<Dy>50</Dy>
+					<Direction>left</Direction>
+				</FlowStatistics>
+				<FlowStatistics>
+					<Id>1465410954015</Id>
+					<Name><![CDATA[pfs_Middle1]]></Name>
+					<X>570</X><Y>310</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-16777088</LineColor>
+					<Dx>20</Dx>
+					<Dy>50</Dy>
+					<Direction>left</Direction>
+				</FlowStatistics>
+				<FlowStatistics>
+					<Id>1465410997572</Id>
+					<Name><![CDATA[pfs_East]]></Name>
+					<X>640</X><Y>280</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-16777088</LineColor>
+					<Dx>20</Dx>
+					<Dy>50</Dy>
+					<Direction>left</Direction>
+				</FlowStatistics>
+				<Pathway>
+					<Id>1465412311623</Id>
+					<Name><![CDATA[path]]></Name>
+					<X>500</X><Y>360</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<LineColor>-16744448</LineColor>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-4.993</X><Y>-14.147</Y></Point>
+						<Point><X>4.993</X><Y>14.147</Y></Point>
+						<Point><X>170</X><Y>-60</Y></Point>
+						<Point><X>165.007</X><Y>-74.147</Y></Point>
+						<Point><X>174.993</X><Y>-45.853</Y></Point>
 					</Points>
 				</Pathway>
 			</Shapes>
@@ -9150,6 +9282,7 @@ setPreferredSpeed(0);]]></EntryAction>
 				<PolygonNode>
 					<Id>1464522544655</Id>
 					<Name><![CDATA[fieldOfView]]></Name>
+					<ExcludeFromBuild>true</ExcludeFromBuild>
 					<X>10</X><Y>-10</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
@@ -9347,7 +9480,7 @@ setPreferredSpeed(0);]]></EntryAction>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<DrawMode>SHAPE_DRAW_3D</DrawMode>
 					<X>0</X><Y>0</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<FileName><![CDATA[x3d/person.x3d]]></FileName>
@@ -9383,6 +9516,29 @@ setPreferredSpeed(0);]]></EntryAction>
 					<AxisOrder>YZX_AXIS_ORDER</AxisOrder>
 					<ApplyShading>true</ApplyShading>
 				</Figure3D>
+				<Oval>
+					<Id>1465411103078</Id>
+					<Name><![CDATA[oval]]></Name>
+					<X>0</X><Y>0</Y>
+					<Label><X>0</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D</DrawMode>
+					<AsObject>true</AsObject>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Z>0</Z>
+					<ZHeight>10</ZHeight>
+					<LineWidth>1</LineWidth>
+					<LineColor>-16777216</LineColor>
+					<LineMaterial>null</LineMaterial>
+					<LineStyle>SOLID</LineStyle>
+					<RadiusX>4</RadiusX>
+					<RadiusY>40</RadiusY>
+					<Rotation>0.0</Rotation>
+					<FillColor>-1</FillColor>
+					<FillMaterial>null</FillMaterial>
+				</Oval>
 			</Shapes>
 
 		</ActiveObjectClass>
